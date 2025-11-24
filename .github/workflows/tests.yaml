@@ -62,6 +62,9 @@ jobs:
           echo "---"
           find playwright-report/ -type f
 
+      - name: Add .nojekyll file
+        run: touch playwright-report/.nojekyll
+
       - name: Deploy to GitHub Pages
         if: always()
         uses: JamesIves/github-pages-deploy-action@v4
