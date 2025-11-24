@@ -1,0 +1,229 @@
+{
+  "config": {
+    "configFile": "/home/runner/work/playwright-DIY/playwright-DIY/playwright.config.ts",
+    "rootDir": "/home/runner/work/playwright-DIY/playwright-DIY/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "/home/runner/work/playwright-DIY/playwright-DIY/src/utils/global-setup.ts",
+    "globalTeardown": "/home/runner/work/playwright-DIY/playwright-DIY/src/utils/global-teardown.ts",
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/alexzavg/playwright-DIY/commit/7f3d5154960ca10181bd3e0b36791d338ef1cc78",
+        "commitHash": "7f3d5154960ca10181bd3e0b36791d338ef1cc78",
+        "buildHref": "https://github.com/alexzavg/playwright-DIY/actions/runs/19621349522"
+      },
+      "gitCommit": {
+        "shortHash": "7f3d515",
+        "hash": "7f3d5154960ca10181bd3e0b36791d338ef1cc78",
+        "subject": "upd",
+        "body": "upd\n",
+        "author": {
+          "name": "Alexander Zavgorodnii",
+          "email": "oleksandrzavhorodnii@coherentsolutions.com",
+          "time": 1763950765000
+        },
+        "committer": {
+          "name": "Alexander Zavgorodnii",
+          "email": "oleksandrzavhorodnii@coherentsolutions.com",
+          "time": 1763950765000
+        },
+        "branch": "master"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "playwright-report/report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/playwright-DIY/playwright-DIY/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "productKey": "ikea",
+          "envKey": "prod",
+          "platform": "desktop"
+        },
+        "id": "ikea-prod-desktop",
+        "name": "ikea-prod-desktop",
+        "testDir": "/home/runner/work/playwright-DIY/playwright-DIY/tests/ikea",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 240000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.54.2",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "ikea/ui/ikea-locale.spec.ts",
+      "file": "ikea/ui/ikea-locale.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "IKEA locale test group",
+          "file": "ikea/ui/ikea-locale.spec.ts",
+          "line": 10,
+          "column": 6,
+          "specs": [
+            {
+              "title": "IKEA ENGLISH locale test",
+              "ok": true,
+              "tags": [
+                "LOCALE",
+                "E2E"
+              ],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ikea-prod-desktop",
+                  "projectName": "ikea-prod-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4985,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[\n  \u001b[32m'You can control the use of cookies.'\u001b[39m,\n  \u001b[32m'IKEA.com/es and our digital partners use cookies and technologies similar to cookies on our website. Some are strictly necessary for the functioning of the site, and other optional cookies are used for measuring how you use the website, enabling the customisation of the website, advertising, marketing and social networks.'\u001b[39m,\n  \u001b[32m'Your consent also allows us to transfer certain data to our partners for processing in the US (e.g. Google). There is a European Commission adequacy decision for the US, which guarantees an adequate level of data protection in the US for data transferred to certified organisations in the United States under the EU–US Data Privacy Framework (DPF). It may not be easy to effectively exercise your rights in the US. You can revoke your consent at any time with effect for the future.'\u001b[39m,\n  \u001b[32m'By clicking \"Accept all\", you are agreeing to the installation of cookies. IF YOU’D PREFER TO CONFIGURE THEM YOURSELF, CLICK “COOKIE CONFIGURATION\". If you select \"Reject all\", only strictly necessary cookies will be used.'\u001b[39m,\n  \u001b[32m'For more information, visit our .'\u001b[39m,\n  \u001b[32m'Cookie policy'\u001b[39m,\n  \u001b[32m'Accept all'\u001b[39m,\n  \u001b[32m'Reject all'\u001b[39m,\n  \u001b[32m'Cookie configuration'\u001b[39m\n]\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Check page texts",
+                          "duration": 4841,
+                          "steps": [
+                            {
+                              "title": "Go to \"https://www.ikea.com/es/en\"",
+                              "duration": 3672
+                            },
+                            {
+                              "title": "Expect visible: \"[id=\"onetrust-banner-sdk\"] >> internal:describe=\"Cookies Popup Container\"\"",
+                              "duration": 57
+                            }
+                          ]
+                        }
+                      ],
+                      "startTime": "2025-11-24T02:20:23.148Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1f885ddd2242b4de9a1e-376ad283d85b036ecc1d",
+              "file": "ikea/ui/ikea-locale.spec.ts",
+              "line": 29,
+              "column": 9
+            },
+            {
+              "title": "IKEA SPANISH locale test",
+              "ok": true,
+              "tags": [
+                "LOCALE",
+                "E2E"
+              ],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ikea-prod-desktop",
+                  "projectName": "ikea-prod-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4800,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "[\n  \u001b[32m'Tú puedes controlar el uso de las cookies.'\u001b[39m,\n  \u001b[32m'IKEA.com/es y nuestros socios digitales utilizan cookies en nuestra página. Algunas son estrictamente necesarias para el funcionamiento de la página, y otras opcionales se utilizan para medir cómo se utiliza la página web, habilitar la personalización de la página web, para publicidad, marketing y redes sociales.'\u001b[39m,\n  \u001b[32m'Con tu consentimiento también nos permites transferir algunos datos a nuestros socios para su tratamiento en Estados Unidos (p. ej., Google). Existe una decisión de adecuación de la Comisión Europea para los Estados Unidos  mediante la cual en Estados Unidos  se garantiza  un nivel adecuado de protección de datos transferidos en el Marco de Privacidad de Datos UE-EE.UU. (DPF) a organizaciones certificadas en EE.UU.  Es posible que no resulte fácil ejercer tus derechos de manera efectiva en Estados Unidos. Puedes anular tu consentimiento en cualquier momento con efecto en el futuro.'\u001b[39m,\n  \u001b[32m'Al pinchar en \"Aceptar todas\", aceptas la instalación de las cookies. SI PREFIERES CONFIGURARLAS TÚ MISMO, PINCHA EN \"CONFIGURACIÓN DE COOKIES\". Si eliges “Rechazar todas” sólo se mantendrán las cookies estrictamente necesarias.'\u001b[39m,\n  \u001b[32m'Para obtener más información, visita nuestra .'\u001b[39m,\n  \u001b[32m'política de cookies'\u001b[39m,\n  \u001b[32m'Aceptar todas'\u001b[39m,\n  \u001b[32m'Rechazar todas'\u001b[39m,\n  \u001b[32m'Configuración de cookies'\u001b[39m\n]\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Check page texts",
+                          "duration": 4637,
+                          "steps": [
+                            {
+                              "title": "Go to \"https://www.ikea.com/es/es\"",
+                              "duration": 2546
+                            },
+                            {
+                              "title": "Expect visible: \"[id=\"onetrust-banner-sdk\"] >> internal:describe=\"Cookies Popup Container\"\"",
+                              "duration": 72
+                            }
+                          ]
+                        }
+                      ],
+                      "startTime": "2025-11-24T02:20:28.196Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1f885ddd2242b4de9a1e-3ccaac4609c9620cfc2f",
+              "file": "ikea/ui/ikea-locale.spec.ts",
+              "line": 29,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-11-24T02:20:22.444Z",
+    "duration": 10607.360999999999,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
