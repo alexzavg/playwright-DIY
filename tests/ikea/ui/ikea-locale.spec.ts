@@ -1,6 +1,9 @@
 import { test } from '../../../src/fixtures/main-fixture';
 import { tags } from '../../../src/test-data/test-tags';
 import { IkeaMainPageLocators } from '../../../src/ui/locators/ikea-main-page-locators';
+import { scrapeTextsFromSelectors } from '../../../src/utils/web-scraper';
+import { pageTexts } from '../../../src/test-data/locale-data';
+import { expect } from '../../../src/utils/wrapped-expect';
 
 let ikeaMainPageLocators: IkeaMainPageLocators;
 
@@ -11,23 +14,34 @@ test.describe(`IKEA locale test group`, () => {
 
   const localeData = [
     {
-      locale: 'ENGLISH',
+      language: 'ENGLISH',
       url: `${process.env.BASE_URL}/en`,
+      pageTexts: pageTexts.cookiesPopup.en,
     },
     {
-      locale: 'SPANISH',
+      language: 'SPANISH',
       url: `${process.env.BASE_URL}/es`,
+      pageTexts: pageTexts.cookiesPopup.es,
     }
   ]
 
   for (const locale of localeData) {
-    test(`IKEA ${locale.locale} locale test`,
+    test(`IKEA ${locale.language} locale test`,
       {
         tag: [tags.locale, tags.e2e],
       },
-      async ({ anonUser }) => {
-        await anonUser.ikeaMainPage.open(locale.url);
-        await anonUser.ikeaMainPage.verifyElementsVisibility();
+      async ({ anonUser, page }) => {
+        await test.step(`Check page texts`, async () => {
+          await anonUser.ikeaMainPage.open(locale.url);
+          const texts = await scrapeTextsFromSelectors(
+            page,
+            [
+              ikeaMainPageLocators.cookiesPopupContainer,
+            ]
+          );
+          console.log(texts);
+          expect(texts).toEqual(locale.pageTexts);
+        });
       }
     );
   }

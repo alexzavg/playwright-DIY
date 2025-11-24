@@ -11,7 +11,6 @@ export abstract class BasePage {
     const url = path ?? this.pagePath;
     await this.page.goto(url);
     await this.page.waitForLoadState('domcontentloaded');
-    await this.page.waitForLoadState('networkidle');
     await this.verifyElementsVisibility();
   }
 

@@ -8,7 +8,7 @@ export class IkeaMainPage extends BasePage {
 
   async verifyElementsVisibility(): Promise<void> {
     const elements = [
-      this.locators.cookiesPopup,
+      this.locators.cookiesPopupContainer,
     ];
 
     for (const element of elements) {

@@ -3,8 +3,8 @@ import { Page } from '@playwright/test';
 export class IkeaMainPageLocators {
   constructor(protected page: Page) {}
 
-  get cookiesPopup() {
-    return this.page.locator('#onetrust-group-container').describe('Cookies Popup');
+  get cookiesPopupContainer() {
+    return this.page.locator('[id="onetrust-banner-sdk"]').describe('Cookies Popup Container');
   }
 
 }

@@ -1,6 +1,6 @@
 import { Locator, Page } from "playwright";
 
-async function extractRawInnerTexts(page: Page): Promise<string[]> {
+export async function extractRawInnerTexts(page: Page): Promise<string[]> {
   return await page.evaluate(() => {
     const texts: string[] = [];
     
@@ -52,69 +52,66 @@ async function extractRawInnerTexts(page: Page): Promise<string[]> {
   });
 }
 
-async function scrapeTextsFromSelectors(
+export async function scrapeTextsFromSelectors(
   page: Page,
   locators: Locator[]
 ): Promise<string[]> {
   const allTexts: string[] = [];
 
-  // Step 1: Collect all matching elements from provided locators
-  const allElements: Locator[] = [];
-  
-  for (const locator of locators) {
+  // Function to check if an element has direct text content (not from children)
+  const hasDirectText = (element: Element): boolean => {
+    for (const node of element.childNodes) {
+      if (node.nodeType === Node.TEXT_NODE && node.textContent?.trim()) {
+        return true;
+      }
+    }
+    return false;
+  };
+
+  // Function to extract text from an element if it has direct text content
+  const extractDirectTextIfExists = (element: Element): string | null => {
+    let textContent = '';
+    for (const node of element.childNodes) {
+      if (node.nodeType === Node.TEXT_NODE && node.textContent?.trim()) {
+        textContent += ' ' + node.textContent.trim();
+      }
+    }
+    return textContent.trim() || null;
+  };
+
+  // Function to process elements recursively
+  const processElement = async (locator: Locator): Promise<void> => {
     try {
       const count = await locator.count();
-      
-      // If nothing is returned - continue the loop
-      if (count === 0) {
-        continue;
-      }
-      
-      // For each returned locator - push them into array
-      for (let i = 0; i < count; i++) {
-        allElements.push(locator.nth(i));
-      }
-    } catch (error) {
-      // If locator fails, continue to next one
-      continue;
-    }
-  }
+      if (count === 0) return;
 
-  // Step 2: Extract direct inner text from each collected element
-  for (const element of allElements) {
-    try {
-      const text = await element.evaluate((el: Element) => {
-        let directText = '';
+      for (let i = 0; i < count; i++) {
+        const currentLocator = locator.nth(i);
         
-        // Collect text from direct text nodes only (not from children)
-        for (const node of el.childNodes) {
-          if (node.nodeType === Node.TEXT_NODE) {
-            directText += node.textContent || '';
+        // Check if the current element has direct text
+        const hasText = await currentLocator.evaluate(hasDirectText);
+        
+        if (hasText) {
+          const text = await currentLocator.evaluate(extractDirectTextIfExists);
+          if (text) {
+            allTexts.push(text);
           }
         }
-        
-        return directText.trim();
-      });
-      
-      // If there's text - push to final array of strings
-      if (text) {
-        allTexts.push(text);
+
+        // Process all direct children
+        const childLocator = currentLocator.locator('> *');
+        await processElement(childLocator);
       }
     } catch (error) {
-      // If element becomes stale or evaluation fails, skip it
-      continue;
+      // Skip any errors and continue with next element
+      return;
     }
+  };
+
+  // Process all provided locators
+  for (const locator of locators) {
+    await processElement(locator);
   }
 
   return allTexts;
 }
-
-// Usage example:
-// const texts = await scrapeTextsFromSelectors(page, [
-//   page.locator('h1'),
-//   page.locator('h2'),
-//   page.locator('p'),
-//   page.locator('a'),
-//   page.locator('button'),
-//   page.locator('span')
-// ]);
