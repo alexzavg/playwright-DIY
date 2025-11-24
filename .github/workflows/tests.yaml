@@ -58,13 +58,18 @@ jobs:
 
       - name: Deploy to GitHub Pages
         if: always()
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: playwright-report
-          destination_dir: .
+          folder: playwright-report
+          branch: gh-pages
+          target-folder: .
+          clean: false
+          single-commit: true
+          commit-message: "Deploy Playwright report"
 
       - name: Print Report URL
         if: always()
         run: |
+          echo "📊 Test Report is available at:"
+          echo "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
           echo "::notice::📊 Test Report: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
