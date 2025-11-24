@@ -34,11 +34,11 @@ comands for terminal
 
 ### Specific test file by relative path:
 
-`npx playwright test tests/cce/auth/login.spec.ts`
+`npx playwright test tests/ikea/ui/ikea-locale.spec.ts`
 
 ### Specific project:
 
-`npx playwright test --project=cce`
+`npx playwright test --project=ikea-prod-desktop`
 
 ### With UI (debug mode): (recomended to use for your local runs)
 
@@ -46,7 +46,7 @@ comands for terminal
 
 - pass a relative path to a specific spec or the whole dir if you need to run or debug specific tests scope
 
-`npx playwright test --ui tests/cce/ui/enrollment/web`
+`npx playwright test --ui tests/ikea/ui/ikea-locale.spec.ts`
 
 ## 🏗️ Project Structure
 
@@ -66,7 +66,7 @@ comands for terminal
 │   │   ├── wrapped-expect.ts    # Custom expect
 │   │   ├── common-browser-actions.ts    # Technical actions not focused on specific page or test
 │   ├── tests                    # all spec files here
-│   │   └── cce/                 # tests for cce project
+│   │   └── ikea/                 # tests for ikea project
 ├── .env
 ├── package.json                # configuration file for dependency management, contains npm scripts for test execution
 ├── playwright.config.ts        # Global config
