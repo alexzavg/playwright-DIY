@@ -58,7 +58,7 @@ export async function scrapeTextsFromSelectors(
 ): Promise<string[]> {
   const allTexts: string[] = [];
 
-  // Function to check if an element has direct text content (not from children)
+  // Check if an element has direct text content (not from children, EXACT element level)
   const hasDirectText = (element: Element): boolean => {
     for (const node of element.childNodes) {
       if (node.nodeType === Node.TEXT_NODE && node.textContent?.trim()) {
@@ -68,7 +68,7 @@ export async function scrapeTextsFromSelectors(
     return false;
   };
 
-  // Function to extract text from an element if it has direct text content
+  // Extract text from an element if it has direct text content
   const extractDirectTextIfExists = (element: Element): string | null => {
     let textContent = '';
     for (const node of element.childNodes) {
@@ -79,7 +79,7 @@ export async function scrapeTextsFromSelectors(
     return textContent.trim() || null;
   };
 
-  // Function to process elements recursively
+  // Process elements recursively
   const processElement = async (locator: Locator): Promise<void> => {
     try {
       const count = await locator.count();
@@ -103,7 +103,6 @@ export async function scrapeTextsFromSelectors(
         await processElement(childLocator);
       }
     } catch (error) {
-      // Skip any errors and continue with next element
       return;
     }
   };

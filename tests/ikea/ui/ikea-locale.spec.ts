@@ -22,6 +22,21 @@ test.describe(`IKEA locale test group`, () => {
       language: 'SPANISH',
       url: `${process.env.BASE_URL}/es`,
       pageTexts: pageTexts.cookiesPopup.es,
+    },
+    {
+      language: 'CATALAN',
+      url: `${process.env.BASE_URL}/ca`,
+      pageTexts: pageTexts.cookiesPopup.ca,
+    },
+    {
+      language: 'EUSKAR',
+      url: `${process.env.BASE_URL}/eu`,
+      pageTexts: pageTexts.cookiesPopup.eu,
+    },
+    {
+      language: 'GALICIAN',
+      url: `${process.env.BASE_URL}/gl`,
+      pageTexts: pageTexts.cookiesPopup.gl,
     }
   ]
 
