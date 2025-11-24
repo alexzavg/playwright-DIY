@@ -45,11 +45,10 @@ test.describe(`IKEA locale test group`, () => {
       {
         tag: [tags.locale, tags.e2e],
       },
-      async ({ anonUser, page }) => {
+      async ({ anonUser }) => {
         await test.step(`Check page texts`, async () => {
           await anonUser.ikeaMainPage.open(locale.url);
           const texts = await scrapeTextsFromSelectors(
-            page,
             [
               ikeaMainPageLocators.cookiesPopupContainer,
             ]

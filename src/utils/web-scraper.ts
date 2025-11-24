@@ -53,7 +53,6 @@ export async function extractRawInnerTexts(page: Page): Promise<string[]> {
 }
 
 export async function scrapeTextsFromSelectors(
-  page: Page,
   locators: Locator[]
 ): Promise<string[]> {
   const allTexts: string[] = [];
