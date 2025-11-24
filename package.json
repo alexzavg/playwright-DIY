@@ -5,14 +5,14 @@
     "gmail-tester": "^1.3.8",
     "libsodium-wrappers": "^0.7.15",
     "pdf-parse": "^1.1.1",
-    "playwright": "^1.51.1",
+    "playwright": "latest",
     "uuid": "^11.1.0",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
     "@faker-js/faker": "^9.6.0",
-    "@playwright/test": "^1.51.1",
+    "@playwright/test": "latest",
     "@types/libsodium-wrappers": "^0.7.14",
     "@types/node": "^22.13.9",
     "@types/pdf-parse": "^1.1.5",
@@ -44,12 +44,12 @@
     "check-unused": "ts-prune",
     "check-skipped": "tsx src/utils/check-skipped-tests.ts",
 
-    "test:cce:stage:all": "PROJECT=cce ENVIRONMENT=stage npx playwright test --project=cce-stage-desktop",
-    "test:cce:stage:api": "PROJECT=cce ENVIRONMENT=stage npx playwright test --project=cce-stage-desktop tests/cce/API/",
-    "test:cce:stage:ui": "PROJECT=cce ENVIRONMENT=stage npx playwright test --project=cce-stage-desktop tests",
+    "test:ikea:prod:all": "PROJECT=ikea ENVIRONMENT=prod npx playwright test --project=ikea-prod-desktop",
+    "test:ikea:prod:api": "PROJECT=ikea ENVIRONMENT=prod npx playwright test --project=ikea-prod-desktop tests/ikea/API/",
+    "test:ikea:prod:ui": "PROJECT=ikea ENVIRONMENT=prod npx playwright test --project=ikea-prod-desktop tests",
     
-    "test:cce:stage:grep:tags:single": "PROJECT=cce ENVIRONMENT=stage npx playwright test --project=cce-stage-desktop --grep @API",
-    "test:cce:stage:grep:tags:multiple": "PROJECT=cce ENVIRONMENT=stage npx playwright test --project=cce-stage-desktop --grep '(?=.*@API)(?=.*@CCE)'"
+    "test:ikea:prod:grep:tags:single": "PROJECT=ikea ENVIRONMENT=prod npx playwright test --project=ikea-prod-desktop --grep @E2E",
+    "test:ikea:prod:grep:tags:multiple": "PROJECT=ikea ENVIRONMENT=prod npx playwright test --project=ikea-prod-desktop --grep '(?=.*@E2E)(?=.*@LOCALE)'"
   },
   "lint-staged": {
     "*.{js,ts,tsx,jsx,json,css,scss,md}": [

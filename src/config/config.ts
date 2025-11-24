@@ -2,19 +2,15 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const projectsConfig: ProjectsConfig = {
-  cce: {
-    stage: {
-      baseUrl: 'https://stage-cleanchoiceenergy.com',
-    },
+  ikea: {
     prod: {
-      baseUrl: 'https://cleanchoiceenergy.com',
+      baseUrl: 'https://www.ikea.com/es',
     },
   },
 };
 
 export interface ProjectsConfig {
-  cce: {
-    stage: ProjectConfig;
+  ikea: {
     prod: ProjectConfig;
   };
 }

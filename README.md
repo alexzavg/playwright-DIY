@@ -10,20 +10,6 @@ Clone the project
 then run - npm install (it will install all needed dependencies)
 also run - npx playwringt install - to install playwright browsers
 
-## 🔐 Gmail Token
-
-For tests interacting with Gmail (e.g., reading activation emails):
-
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Select project "Gmail for Clean Choice Automation"
-3. Go to credentials
-4. Download credentials and save as:
-   credentials.json in the root of project
-5. Run:
-`node node_modules/gmail-tester/init.js credentials.json token.json qa_automation@cleanchoice.com`
-
-This generates `token.json` automatically and places it to your project root.
-
 ## ⚙️ Local Setup
 
 Create a `.env` file in the root and populate it with env variables.
@@ -78,9 +64,7 @@ comands for terminal
 │   │   ├── tear-down.ts         # Cleanup for auth files after tests
 │   │   ├── wrap-page.ts         # Custom page wrapper
 │   │   ├── wrapped-expect.ts    # Custom expect
-│   │   └── gmail-methods        # Gmail helpers
 │   │   ├── common-browser-actions.ts    # Technical actions not focused on specific page or test
-│   │   ├── locator-maker.ts    # allows to add name for locators (needed for test steps)
 │   ├── tests                    # all spec files here
 │   │   └── cce/                 # tests for cce project
 ├── .env
