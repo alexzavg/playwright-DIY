@@ -62,7 +62,7 @@ jobs:
         with:
           folder: playwright-report
           branch: gh-pages
-          target-folder: .  # Deploy to root of gh-pages branch
+          target-folder: playwright-report
           clean: true
 
       - name: Print Report URL
