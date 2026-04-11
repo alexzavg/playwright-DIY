@@ -1,10 +1,10 @@
 # Testing Strategy
 
 **Application Under Test:** Kolsquare Notes Feature  
-**Original Task:** https://www.notion.so/kolsquare/Kolsquare-QA-Engineering-Project-33ec57389c758126b4a6cff925cfd0c6?pvs=11
-**Application Requirements:** https://www.notion.so/kolsquare/Notes-Project-33ec57389c758127be7dd059efeec9bf
-**Figma Design:** https://www.figma.com/design/ktCuTXQG9MmJXEES0fNfYR/3ae55c24-054b-41f9-b767-a17fccb71ccc?node-id=0-1&t=csv7XTnT14q9gcMe-1
-**Application URL:** https://kolsquare-qa.fly.dev/
+**Original Task:** [Link](https://www.notion.so/kolsquare/Kolsquare-QA-Engineering-Project-33ec57389c758126b4a6cff925cfd0c6?pvs=11)
+**Application Requirements:** [Link](https://www.notion.so/kolsquare/Notes-Project-33ec57389c758127be7dd059efeec9bf)
+**Figma Design:** [Link](https://www.figma.com/design/ktCuTXQG9MmJXEES0fNfYR/3ae55c24-054b-41f9-b767-a17fccb71ccc?node-id=0-1&t=csv7XTnT14q9gcMe-1)
+**Application URL:** https://kolsquare-qa.fly.dev
 
 ---
 
