@@ -27,10 +27,9 @@
 |------|-------------|
 | Functional | CRUD operations for notes and replies; thread collapse/expand |
 | API | REST endpoints: `GET`, `POST`, `PATCH`, `DELETE` on `/api/notes` and `/api/notes/:id/reply` |
-| Input validation | Empty text, boundary lengths, special characters, XSS/SQLi payloads |
+| Input validation | Empty text, boundary lengths, special characters |
 | UI/UX | Modal dialogs, hover states, date formatting, empty states |
 | Responsive | Mobile (375px), tablet (768px), desktop (1280px+) |
-| Security | XSS, SQL injection, error information leakage |
 
 ### Out of Scope
 
@@ -43,13 +42,12 @@
 
 ### Exploratory Testing
 
-Session-based exploratory testing which consists of 5 parts:
+Session-based exploratory testing which consists of 4 parts:
 
 1. **Happy path** - Create, read, edit, delete notes and replies
 2. **Input boundaries** - Empty, max-length, special characters, Unicode
 3. **API** - Request/response validation, status codes, error formats
 4. **UI/UX consistency** - Layout, responsiveness, dialogs, date formatting
-5. **Security surface** - Injections, error disclosure
 
 Exploratory testing was chosen because the feature is small and well-scoped, no existing test suite exists, and the primary goal at this stage is to identify defects rather than prevent regression.
 
@@ -86,15 +84,15 @@ All REST endpoints are to be tested independently of the UI via direct HTTP call
 
 ## 4. Test Suite
 
-33 test cases documented in [test-cases.md](test-cases.md), organized into 5 sections:
+31 test cases documented in [test-cases.md](test-cases.md), organized into 5 sections:
 
 | Section | Coverage | TCs |
 |---------|----------|-----|
 | Happy Path | CRUD operations, replies, thread collapse, cancel, empty state | TC-01 – TC-10 |
-| Input Validation & Edge Cases | Empty text, long text, XSS, SQLi, Unicode, missing/extra fields | TC-11 – TC-20 |
-| UI/UX | Dialog state, date format, editing, deletion | TC-21 – TC-26 |
-| Responsive & Mobile | Mobile layout, dialog viewport fit, touch accessibility | TC-27 – TC-29 |
-| API | Response structure, `updatedAt` mutation, JSON error format | TC-30 – TC-33 |
+| Input Validation & Edge Cases | Empty text, long text, Unicode, missing/extra fields | TC-11 – TC-18 |
+| UI/UX | Dialog state, date format, editing, deletion | TC-19 – TC-24 |
+| Mobile & Responsive | Mobile layout, dialog viewport fit, touch accessibility | TC-25 – TC-27 |
+| API | Response structure, `updatedAt` mutation, JSON error format | TC-28 – TC-31 |
 
 ---
 
