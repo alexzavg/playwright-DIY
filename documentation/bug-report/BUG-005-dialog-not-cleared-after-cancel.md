@@ -26,4 +26,6 @@ Textarea contains "test text" from step 2.
 ## Expected Result
 
 Textarea is empty on each dialog open.
+
+Video to showcase the issue:
 https://github.com/user-attachments/assets/c7261ef6-dfb2-47e4-a140-80e294c7886a
