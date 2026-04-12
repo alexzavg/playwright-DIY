@@ -47,6 +47,10 @@ jobs:
 
       - name: Run Playwright tests
         run: npx playwright test --project=${{ github.event.inputs.project }}-${{ github.event.inputs.environment }}-desktop --grep "${{ github.event.inputs.test_tag }}"
+        env:
+          PROJECT: ${{ github.event.inputs.project }}
+          ENVIRONMENT: ${{ github.event.inputs.environment }}
+          PLATFORM: desktop
 
       - name: Upload test results
         if: always()

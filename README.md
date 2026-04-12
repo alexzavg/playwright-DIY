@@ -48,7 +48,7 @@ npx playwright test tests/kolsquare/ui/tc-01-create-note.spec.ts
 ### With Playwright UI (recommended for local runs):
 
 ```bash
-npx playwright test --ui tests/kolsquare/ui/
+npm run playwright:ui
 ```
 
 ### By tag:
