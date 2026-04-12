@@ -79,11 +79,9 @@ jobs:
           clean: true
           single-commit: true
           commit-message: "Deploy Playwright report"
-          clean-exclude: "**/*"
 
       - name: Print Report URL
         if: always()
         run: |
           echo "📊 Test Report is available at:"
           echo "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
-          echo "::notice::📊 Test Report: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
