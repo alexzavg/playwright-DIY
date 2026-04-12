@@ -92,7 +92,7 @@ All REST endpoints are to be tested independently of the UI via direct HTTP call
 | Input Validation & Edge Cases | Empty text, long text, Unicode, missing/extra fields | TC-11 - TC-18 |
 | UI/UX | Dialog state, date format, editing, deletion | TC-19 - TC-24 |
 | Mobile & Responsive | Mobile layout, dialog viewport fit, touch accessibility | TC-25 - TC-27 |
-| API | Response structure, `updatedAt` mutation, JSON error format | TC-28 - TC-31 |
+| API | Response structure, `updatedAt` value change, JSON error format | TC-28 - TC-31 |
 
 ---
 
