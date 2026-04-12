@@ -22,6 +22,9 @@ When resizing the textarea - it goes out of viewport and is not fully visible. T
 ## Actual Result
 
 The textarea goes out of viewport and is not fully visible. The page doesn't scroll to make the textarea visible.
+<img width="957" height="890" alt="Monosnap Notes 2026-04-12 12-44-57" src="https://github.com/user-attachments/assets/3aa402ef-ac8f-4313-954e-d9f996271b28" />
+
+https://github.com/user-attachments/assets/3cb2f3fb-266d-4854-852f-c4492bffe73d
 
 ## Expected Result
 
