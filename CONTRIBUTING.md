@@ -7,7 +7,7 @@ Please follow these rules to keep the project maintainable, consistent, and clea
 
 ## 🌿 Branch Naming
 
-Create feature branches from `main` using the pattern:
+Create feature branches from `master` using the pattern:
 
 ```
 <prefix>/<JIRA-KEY>-<kebab-case-description>
@@ -47,7 +47,7 @@ Use [Conventional Commits](https://www.conventionalcommits.org/) and always incl
 ## 🧑‍💻 Code Style
 
 - Follow **Prettier** and **ESLint** rules (run `npm run prettier && npm run eslint` before pushing).
-- Do not commit directly to `main`. Always use branches and open a **Pull Request**.
+- Do not commit directly to `master`. Always use branches and open a **Pull Request**.
 - Keep functions small and focused.
 - If a method takes **2 parameters**, pass them directly.
 - If a method takes **more than 2 parameters**, define an **interface** and use it instead.
@@ -93,13 +93,13 @@ function createUser(params: CreateUserParams) { ... }
 3. Run formatters & linters before push:  
    `npm run prettier && npm run eslint`
 
-4. Push and open **Pull Request** into `main`.
+4. Push and open **Pull Request** into `master`.
 
 ---
 
 ## 🚫 Protected Branches
 
-- `main` is **protected**.
+- `master` is **protected**.
 - No direct commits or merges allowed.
 - Only **Pull Requests** with at least **1 reviewer approval** are allowed.
 
@@ -108,7 +108,7 @@ function createUser(params: CreateUserParams) { ... }
 ## 💡 Additional Tips
 
 - Keep commits atomic and descriptive.
-- Rebase instead of merging when syncing with `main`.
+- Rebase instead of merging when syncing with `master`.
 - Avoid committing sensitiva data.
 
 ---
