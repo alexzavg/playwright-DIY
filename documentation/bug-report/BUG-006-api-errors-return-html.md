@@ -19,7 +19,8 @@ All error responses from `/api/*` endpoints return Symfony's default HTML error 
 
 ## Actual Result
 
-All errors return `Content-Type: text/html` with full HTML pages. Affected codes: 404, 405, 422, 500.
+All errors return `Content-Type: text/html` with full HTML pages. Affected codes: 404, 422.
+<img width="1012" height="813" alt="err validation format" src="https://github.com/user-attachments/assets/72bec132-bb32-4d99-9d55-c28bb007acde" />
 
 ## Expected Result
 
