@@ -37,7 +37,7 @@
 | TC-02 | Read notes on page load | At least one note exists | 1. Navigate to base URL | 1. All notes displayed with avatar, name, date, text, and replies.<br>2. `GET /api/notes` returns 200. | P1 | ✅ |
 | TC-03 | Edit a note | At least one note exists | 1. Hover over note → click "Edit."<br>2. Change text.<br>3. Click "Save Note" | 1. Note text updated in list.<br>2. `PATCH /api/notes/:id` returns 200.<br>3. `updatedAt` is updated. | P1 | ❌ [BUG-002](bug-report/BUG-002-updated-at-not-updated-on-edit.md) |
 | TC-04 | Delete a note | At least one note exists | 1. Hover over note → click "Delete."<br>2. Confirm in dialog | 1. Note removed from list.<br>2. `DELETE /api/notes/:id` returns 200. | P1 | ✅ |
-| TC-05 | Delete note with replies (cascade) | Note with at least one reply exists | 1. Hover over parent note → click "Delete."<br>2. Confirm | 1. Parent note and all replies removed. | P1 | ✅ |
+| TC-05 | Delete note with replies | Note with at least one reply exists | 1. Hover over parent note → click "Delete."<br>2. Confirm | 1. Parent note and all replies removed. | P1 | ✅ |
 | TC-06 | Reply to a note | At least one note exists | 1. Click "Reply."<br>2. Enter reply text.<br>3. Click "Create Reply" | 1. Reply appears under parent note.<br>2. `POST /api/notes/:id/reply` returns 200. | P1 | ✅ |
 | TC-07 | Thread collapse at 3+ replies | Note has 3+ replies | 1. Observe note with 3+ replies | 1. Only the most recent reply visible.<br>2. "Show X more replies" link displayed. | P1 | ✅ |
 | TC-08 | Expand collapsed thread | Note with collapsed replies | 1. Click "Show X more replies" | 1. All replies visible in chronological order. | P1 | ✅ |
@@ -89,6 +89,6 @@
 | ID | Test Case | Preconditions | Steps | Expected Result | Priority | Status |
 |----|-----------|--------------|-------|-----------------|----------|--------|
 | TC-28 | GET response structure | Note with replies exists | 1. `GET /api/notes` | 1. JSON array.<br>2. Each note: `id` (int), `text` (string), `author` (object), `replies` (array), `createdAt`, `updatedAt`.<br>3. Each reply: `id`, `text`, `author`, `createdAt`. | P1 | ✅ |
-| TC-29 | POST response structure | N/A | 1. `POST /api/notes` with `{"text": "test"}` | 1. 200/201.<br>2. JSON note object with `id`, `text` matching input, random `author`, empty `replies`, `createdAt`, `updatedAt`. | P1 | ✅ |
+| TC-29 | POST response structure | N/A | 1. `POST /api/notes` with `{"text": "test"}` | 1. Status code 200.<br>2. JSON note object with `id`, `text` matching input, random `author`, empty `replies`, `createdAt`, `updatedAt`. | P1 | ✅ |
 | TC-30 | PATCH updates `updatedAt` | Note exists | 1. Record `updatedAt`.<br>2. `PATCH /api/notes/:id` with new text.<br>3. Compare | 1. `updatedAt` is newer than before.<br>2. `createdAt` unchanged. | P1 | ❌ [BUG-002](bug-report/BUG-002-updated-at-not-updated-on-edit.md) |
 | TC-31 | Error responses return JSON | N/A | 1. `POST /api/notes` with `{}`.<br>2. `DELETE /api/notes/999999` | 1. All errors return `Content-Type: application/json` with JSON body.<br>2. No HTML error pages. | P1 | ❌ [BUG-006](bug-report/BUG-006-api-errors-return-html.md) |
