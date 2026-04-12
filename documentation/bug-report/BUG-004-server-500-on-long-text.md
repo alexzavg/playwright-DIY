@@ -17,11 +17,13 @@ Sending a note with 10,000+ characters causes a 500 Internal Server Error. Neith
 
 ## Steps to Reproduce
 
-1. Send `POST /api/notes` with `{"text": "AAAA..."}` (10,000 characters).
+1. Send `POST /api/notes` with `{"text": "AAAA..."}` (10,000+ characters).
 
 ## Actual Result
 
 HTTP 500 Internal Server Error. Response is an HTML error page. The frontend textarea has no `maxlength`, no counter, and no warning.
+<img width="3680" height="2260" alt="long text 500" src="https://github.com/user-attachments/assets/9eb9193d-42c2-405e-b8c1-f6e7b88ea283" />
+
 
 ## Expected Result
 
