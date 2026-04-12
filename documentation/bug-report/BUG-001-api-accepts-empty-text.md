@@ -5,7 +5,7 @@
 
 ## Summary
 
-`POST /api/notes`, `POST /api/notes/:id/reply`, and `PATCH /api/notes/:id` all accept an empty string `""` as valid text. The frontend has HTML5 `required` validation, but the backend lacks server-side validation - empty content can be created via direct API calls.
+`POST /api/notes`, `POST /api/notes/:id/reply`, and `PATCH /api/notes/:id` all accept an empty string `""` as valid text. The frontend has validation, but the backend lacks server-side validation - empty content can be created via direct API calls.
 
 ## Environment
 
@@ -19,12 +19,9 @@
 
 ## Actual Result
 
-All three return HTTP 200 with objects containing empty text. Empty notes/replies are persisted and displayed as blank cards.
+All three return HTTP 200 with objects containing empty text. Empty notes/replies are persisted and displayed as blank cards. 
+<img width="1002" height="797" alt="empty text" src="https://github.com/user-attachments/assets/d42cb3db-fcfe-44cc-b7c2-9b943e2bcbce" />
 
 ## Expected Result
 
 All three return HTTP 422 with a JSON error message. No empty content created.
-
-## Additional Info
-
-Production data confirms empty replies already exist (e.g., reply with `"text": ""`). Server-side validation should mirror the frontend's `required` constraint.
