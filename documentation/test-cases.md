@@ -80,7 +80,7 @@
 |----|-----------|--------------|-------|-----------------|----------|--------|
 | TC-25 | Mobile layout (375px) | N/A | 1. Open application at 375x667 viewport | 1. No horizontal scrollbar.<br>2. Content readable.<br>3. Create button accessible.<br>4. Header elements do not overlap. | P2 | ✅ |
 | TC-26 | Mobile dialog fits viewport | 375px viewport, dialog open | 1. Open any dialog on mobile | 1. Dialog fully visible.<br>2. Textarea usable.<br>3. Buttons tappable.<br>4. No overflow. | P2 | ❌ [BUG-008](bug-report/BUG-008-mobile-dialog-viewport-fit.md) |
-| TC-27 | Touch device access to Edit/Delete | Touch device or simulation | 1. Tap a note card | 1. Edit/Delete controls accessible without hover (via tap, long-press, or always-visible on touch). | P2 | ❌ [BUG-009](bug-report/BUG-009-hover-controls-inaccessible-on-touch.md) |
+| TC-27 | Touch device access to Edit/Delete | Touch device or simulation | 1. Tap a note card | 1. Edit/Delete controls accessible without hover (via tap, long-press, or always-visible on touch). | P2 | ✅ |
 
 ---
 
