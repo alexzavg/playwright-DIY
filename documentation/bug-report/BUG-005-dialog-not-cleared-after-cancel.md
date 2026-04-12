@@ -26,7 +26,4 @@ Textarea contains "test text" from step 2.
 ## Expected Result
 
 Textarea is empty on each dialog open.
-
-## Additional Info
-
-Vue component state issue - the textarea model value is not reset when the dialog closes.
+https://github.com/user-attachments/assets/c7261ef6-dfb2-47e4-a140-80e294c7886a
