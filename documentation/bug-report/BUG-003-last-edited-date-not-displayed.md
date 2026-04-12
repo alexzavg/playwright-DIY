@@ -21,6 +21,8 @@ The UI does not indicate when a note was last edited. Per the requirements, each
 ## Actual Result
 
 Only the creation date is shown. No visual distinction between new and edited notes.
+<img width="933" height="519" alt="Monosnap Notes 🔊 2026-04-12 12-05-18" src="https://github.com/user-attachments/assets/28235b89-0838-4f07-b1c6-96bbbe81ce2c" />
+
 Video to showcase the issue: https://github.com/user-attachments/assets/4db1fb4d-3de3-4370-88ae-27c83407116b
 
 ## Expected Result
