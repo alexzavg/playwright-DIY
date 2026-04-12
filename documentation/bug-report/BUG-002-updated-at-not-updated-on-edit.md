@@ -20,12 +20,10 @@ When a note is edited via `PATCH /api/notes/:id`, the `updatedAt` timestamp rema
 
 ## Actual Result
 
-Both timestamps are identical after the edit. `updatedAt` is never mutated.
+Both timestamps are identical after the edit. `updatedAt` is not changed. 
+<img width="3680" height="2260" alt="updatedAt bug" src="https://github.com/user-attachments/assets/9fb0d954-81f3-473b-b67f-3b2614de6413" />
+
 
 ## Expected Result
 
 `updatedAt` reflects the edit time, distinct from `createdAt`.
-
-## Additional Info
-
-Likely a missing Doctrine lifecycle callback (`@PreUpdate`) or a missing `$this->updatedAt = new \DateTimeImmutable()` in the entity setter.
