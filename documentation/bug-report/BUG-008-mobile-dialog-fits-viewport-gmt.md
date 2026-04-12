@@ -15,7 +15,7 @@ Mobile dialog doesn't fit viewport when toggled in Chrome DevTools device toolba
 ## Steps to Reproduce
 
 1. Navigate to the app.
-2. Toggle Chrome DevTools device toolbar to Iphone SE.
+2. Toggle Chrome DevTools device toolbar to Iphone SE (375x667).
 3. Open any dialog (e.g. click "Create a new note" button).
 
 ## Actual Result
