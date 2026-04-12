@@ -23,6 +23,9 @@ When a note is edited via `PATCH /api/notes/:id`, the `updatedAt` timestamp rema
 Both timestamps are identical after the edit. `updatedAt` is not changed. 
 <img width="3680" height="2260" alt="updatedAt bug" src="https://github.com/user-attachments/assets/9fb0d954-81f3-473b-b67f-3b2614de6413" />
 
+Video to showcase the issue 
+<img width="3680" height="2260" alt="updatedAt bug vid" src="https://github.com/user-attachments/assets/17130c8c-f0bd-46b2-b9df-570989c76128" />
+
 
 ## Expected Result
 
