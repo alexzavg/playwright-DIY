@@ -21,6 +21,8 @@ Mobile dialog doesn't fit viewport when toggled in Chrome DevTools device toolba
 ## Actual Result
 
 Dialog doesn't fit viewport and is cut off at the sides.
+<img width="696" height="756" alt="mob1" src="https://github.com/user-attachments/assets/610861b7-a3aa-407c-9ad6-9d1bda30f1d3" />
+<img width="641" height="772" alt="mob2" src="https://github.com/user-attachments/assets/d97bdb24-bd3b-4871-bc2b-ba32c5f87f18" />
 
 ## Expected Result
 
