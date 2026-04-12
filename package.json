@@ -43,13 +43,9 @@
     "lint:fix": "eslint 'src/**/*.{ts,tsx}' --fix",
     "check-unused": "ts-prune",
     "check-skipped": "tsx src/utils/check-skipped-tests.ts",
-
-    "test:ikea:prod:all": "PROJECT=ikea ENVIRONMENT=prod npx playwright test --project=ikea-prod-desktop",
-    "test:ikea:prod:api": "PROJECT=ikea ENVIRONMENT=prod npx playwright test --project=ikea-prod-desktop tests/ikea/API/",
-    "test:ikea:prod:ui": "PROJECT=ikea ENVIRONMENT=prod npx playwright test --project=ikea-prod-desktop tests",
-    
-    "test:ikea:prod:grep:tags:single": "PROJECT=ikea ENVIRONMENT=prod npx playwright test --project=ikea-prod-desktop --grep @LOCALE",
-    "test:ikea:prod:grep:tags:multiple": "PROJECT=ikea ENVIRONMENT=prod npx playwright test --project=ikea-prod-desktop --grep '(?=.*@E2E)(?=.*@LOCALE)'"
+    "test:kolsquare:prod:all": "PROJECT=kolsquare ENVIRONMENT=prod PLATFORM=desktop npx playwright test --project=kolsquare-prod-desktop",
+    "test:kolsquare:prod:api": "PROJECT=kolsquare ENVIRONMENT=prod PLATFORM=desktop npx playwright test --project=kolsquare-prod-desktop tests/kolsquare/api/",
+    "test:kolsquare:prod:ui": "PROJECT=kolsquare ENVIRONMENT=prod PLATFORM=desktop npx playwright test --project=kolsquare-prod-desktop tests/kolsquare/ui/"
   },
   "lint-staged": {
     "*.{js,ts,tsx,jsx,json,css,scss,md}": [

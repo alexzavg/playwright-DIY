@@ -2,15 +2,15 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const projectsConfig: ProjectsConfig = {
-  ikea: {
+  kolsquare: {
     prod: {
-      baseUrl: 'https://www.ikea.com/es',
+      baseUrl: 'https://kolsquare-qa.fly.dev',
     },
   },
 };
 
 export interface ProjectsConfig {
-  ikea: {
+  kolsquare: {
     prod: ProjectConfig;
   };
 }

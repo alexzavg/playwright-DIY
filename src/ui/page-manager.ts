@@ -1,10 +1,10 @@
 // user-page-manager.ts
 import { Page } from '@playwright/test';
 import { wrapPageWithSmartSteps } from '../utils/page-wraper';
-import { IkeaMainPage } from './page-objects/ikea-main-page';
+import { NotesPage } from './page-objects/notes-page';
 
 export class PageManager {
-  private _ikeaMainPage?: IkeaMainPage;
+  private _notesPage?: NotesPage;
 
   private page: Page;
 
@@ -12,7 +12,7 @@ export class PageManager {
     this.page = wrapPageWithSmartSteps(page);
   }
 
-  get ikeaMainPage() {
-    return (this._ikeaMainPage ??= new IkeaMainPage(this.page));
+  get notesPage() {
+    return (this._notesPage ??= new NotesPage(this.page));
   }
 }

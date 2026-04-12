@@ -8,7 +8,7 @@ export const tags = {
   locale: '@LOCALE',
 } as const;
 
-export type TagKey = keyof typeof tags; // 'cce' | 'regression' | ... | 'esg'
-export type Tag = (typeof tags)[TagKey]; // '@CCE' | '@REGRESSION' | ... | '@ESG'
+export type TagKey = keyof typeof tags; // 'e2e' | 'api' | 'regression' | ... | 'esg'
+export type Tag = (typeof tags)[TagKey]; // '@E2E' | '@API' | '@REGRESSION' | ... | '@ESG'
 
 export const pickTags = (...keys: TagKey[]): Tag[] => keys.map((k) => tags[k]);

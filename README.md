@@ -1,154 +1,141 @@
-# 🚀 Playwright Automation Project
+# Playwright Automation Project — Kolsquare Notes App
 
-A modern end-to-end testing framework using **Playwright**, designed with custom logging, wrappers, and scalable architecture.
+End-to-end and API testing framework for the [Kolsquare Notes App](https://kolsquare-qa.fly.dev/) using **Playwright**, with custom logging, wrappers, and scalable architecture.
 
-## 📦 Installation
+## Installation
 
-Go to - https://github.com/cleanchoice/playwright-automation-tests
-Clone the project
-
-then run - npm install (it will install all needed dependencies)
-also run - npx playwringt install - to install playwright browsers
-
-## ⚙️ Local Setup
-
-Create a `.env` file in the root and populate it with env variables.
-The `.env` is your main point of controlling the envs and project you're running your tests against.
-Set the `PROJECT` and `ENVIRONMENT` directly in the `.env` for local test development.
-Ask alexzavg for this information.
-
-```env
-ADMIN_PASSWORD= password for admin account
-PASSWORD=universal password that used for base test users
-PLATFORM=desktop
-...other env variables...
+```bash
+npm install
+npx playwright install
 ```
 
-## 🧪 Running Tests
+## Local Setup
 
-comands for terminal
+Create a `.env` file in the root:
+
+```env
+PROJECT="kolsquare"
+ENVIRONMENT="prod"
+PLATFORM="desktop"
+```
+
+## Running Tests
 
 ### All tests:
 
-`npx playwright test`
-
-### Specific test file by relative path:
-
-`npx playwright test tests/ikea/ui/ikea-locale.spec.ts`
-
-### Specific project:
-
-`npx playwright test --project=ikea-prod-desktop`
-
-### With UI (debug mode): (recomended to use for your local runs)
-
-`npx playwright test --ui`
-
-- pass a relative path to a specific spec or the whole dir if you need to run or debug specific tests scope
-
-`npx playwright test --ui tests/ikea/ui/ikea-locale.spec.ts`
-
-## 🏗️ Project Structure
-
 ```bash
-
-├── src/
-│   ├── api/                # Api objects
-    |-- test-data
-│   ├── UI/                      # Locators and page objects
-|   |   |- locators
-|   |   |- page-objects
-|   |   |- page-manager.ts  # general setup for page creation
-│   ├── utils/
-│   │   ├── global-setup.ts       # Allows to prepare user tokens before tests
-│   │   ├── tear-down.ts         # Cleanup for auth files after tests
-│   │   ├── wrap-page.ts         # Custom page wrapper
-│   │   ├── wrapped-expect.ts    # Custom expect
-│   │   ├── common-browser-actions.ts    # Technical actions not focused on specific page or test
-│   ├── tests                    # all spec files here
-│   │   └── ikea/                 # tests for ikea project
-├── .env
-├── package.json                # configuration file for dependency management, contains npm scripts for test execution
-├── playwright.config.ts        # Global config
+npm run test:kolsquare:prod:all
 ```
 
----
+### UI tests only:
 
-## ✅ Logging with Wrappers
+```bash
+npm run test:kolsquare:prod:ui
+```
 
-### 🔍 Page Wrapper (`wrapPageWithSmartSteps`)
+### API tests only:
+
+```bash
+npm run test:kolsquare:prod:api
+```
+
+### Specific test file:
+
+```bash
+npx playwright test tests/kolsquare/ui/tc-01-create-note.spec.ts
+```
+
+### With Playwright UI (recommended for local runs):
+
+```bash
+npx playwright test --ui tests/kolsquare/ui/
+```
+
+### By tag:
+
+```bash
+PROJECT=kolsquare ENVIRONMENT=prod PLATFORM=desktop npx playwright test --project=kolsquare-prod-desktop --grep @E2E
+```
+
+## Project Structure
+
+```
+├── src/
+│   ├── api/                        # API request classes (BaseRequestor, NotesApi)
+│   ├── test-data/                  # Test tags, shared test data
+│   ├── ui/
+│   │   ├── locators/               # Locator classes per page
+│   │   ├── page-objects/           # Page object classes
+│   │   └── page-manager.ts         # Lazy-loaded page object registry
+│   ├── utils/
+│   │   ├── global-setup.ts         # Pre-run cleanup (deletes all notes)
+│   │   ├── global-teardown.ts      # Post-run cleanup
+│   │   ├── page-wraper.ts          # Smart step logging wrapper
+│   │   └── wrapped-expect.ts       # Custom expect with logging
+├── tests/
+│   └── kolsquare/
+│       ├── api/                    # API spec files
+│       └── ui/                     # UI spec files
+├── documentation/                  # Testing strategy, test cases, bug reports
+├── .env
+├── package.json
+├── playwright.config.ts
+```
+
+## Logging
+
+### Page Wrapper (`wrapPageWithSmartSteps`)
 
 Automatically logs readable test steps:
 
 ```
-STEP: Click on "Login Button"
-STEP: Expect visible: "Email Field"
+STEP: Click on "Create a new Note Button"
+STEP: Fill "Dialog Textarea"
 ```
 
-To use:
+### Expect Wrapper (`wrapped-expect.ts`)
 
 ```ts
-this.page = wrapPageWithSmartSteps(page);
+import { expect } from '../../../src/utils/wrapped-expect';
 ```
 
-### 🔍 Expect Wrapper (`wrapped-expect.ts`)
+All assertions (`.toBeVisible()`, `.toBeHidden()`, etc.) are logged automatically.
 
-Import custom `expect`:
+## Fixtures
+
+Using custom fixtures from `main-fixture.ts`:
+
+- `anonUser` — PageManager instance for anonymous user interactions
+- `api` — ApiManager instance for direct API calls
+- `addCleanup` — register teardown callbacks (e.g., delete created notes)
 
 ```ts
-import { expect } from '../../../utils/wrapped-expect';
+import { test } from '../../../src/fixtures/main-fixture';
+
+test('example', async ({ anonUser, api, addCleanup }) => {
+  // ...
+});
 ```
 
-Now all `.toBeVisible()`, `.toBeHidden()`, etc. are logged.
+## Helpful Commands
+
+| Command | Description |
+|---------|-------------|
+| `npx playwright test` | Run tests |
+| `npx playwright show-report` | View HTML report |
+| `npx playwright codegen` | Generate selectors |
+| `npm run prettier` | Format code |
+| `npm run lint` | Lint check |
+
+## Documentation
+
+See the [documentation/](documentation/) folder for:
+- [Testing Strategy](documentation/testing-strategy.md)
+- [Test Cases](documentation/test-cases.md)
+- [Bug Reports](documentation/bug-report/)
+- [Future QA Approach](documentation/future-qa-approach.md)
+- [Postman Collection](documentation/kolsquare-notes-api.postman_collection.json)
 
 ---
 
-## 🔧 Main Fixture Usage
-
-Using custom fixtures (e.g., `main-fixture`) allows you to:
-- Authenticate users
-- API utilities
-- Environment setup per test run
-
-```ts
-import { test } from '../../fixtures/main-fixture';
-
-// Usage
-test.use({ userEmail: email }); - need to call it at the top of your spec
-```
-
-user - A logged-in user initialized via API call.
-api - API manager instance for performing direct API calls.
-userEmail - Required email for logging in the user. Passed using test.use(...).
-
----
-
-## 🐌 Slow Down Tests (Optional Debug Mode)
-
-Add in your config or specific test:
-
-```ts
-await page.waitForTimeout(500); // slow down between actions
-```
-
-Or globally via Playwright’s `launchOptions.slowMo`.
-
----
-
-## 🛠 Helpful Commands
-
-- `npx playwright test` - Run tests
-- `npx playwright show-report` - View HTML test report
-- `npx playwright codegen` - Generate selectors
-- `npm run prettier` - prettier for code style edit
-- `npm run eslint` - helps to find unused code or mistakes
-
----
-
-## 💬 Need Help?
-
-Ask your friendly QA teammate 😉 or check the docs: [Playwright Docs](https://playwright.dev/)
-
----
-
-Happy testing! 🎯
+[Playwright Docs](https://playwright.dev/)

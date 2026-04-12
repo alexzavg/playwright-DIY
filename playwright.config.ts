@@ -20,8 +20,8 @@ const projectConfig: ProjectConfig = projectEnvironments[envKey];
 process.env.BASE_URL = projectConfig.baseUrl;
 
 export default defineConfig({
-  globalSetup: process.env.CI ? require.resolve('./src/utils/global-setup.ts') : undefined,
-  globalTeardown: process.env.CI ? require.resolve('./src/utils/global-teardown.ts') : undefined,
+  globalSetup: require.resolve('./src/utils/global-setup.ts'),
+  globalTeardown: require.resolve('./src/utils/global-teardown.ts'),
   testDir: './tests',
   timeout: 4 * 60 * 1000,
   expect: {
