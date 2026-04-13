@@ -2,6 +2,24 @@
 
 End-to-end and API testing framework for the [Kolsquare Notes App](https://kolsquare-qa.fly.dev/) using **Playwright**, with custom logging, wrappers, and scalable architecture.
 
+## Table of Contents
+
+- [Video Walkthrough](#video-walkthrough)
+- [Installation](#installation)
+- [Local Setup](#local-setup)
+- [Running Tests](#running-tests)
+- [Project Structure](#project-structure)
+- [Logging](#logging)
+- [Fixtures](#fixtures)
+- [Helpful Commands](#helpful-commands)
+- [Documentation](#documentation)
+
+## Video Walkthrough
+
+Test task structure overview — click the preview to watch on YouTube:
+
+[![Test task structure overview](https://img.youtube.com/vi/Z589E4oPfIY/maxresdefault.jpg)](https://youtu.be/Z589E4oPfIY)
+
 ## Installation
 
 ```bash
