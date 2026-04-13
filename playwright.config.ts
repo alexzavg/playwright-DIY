@@ -42,11 +42,12 @@ export default defineConfig({
         ['json', { outputFile: 'playwright-report/report.json' }],
       ],
   use: {
-    actionTimeout: 55000,
+    actionTimeout: 60000,
     headless: true,
     ignoreHTTPSErrors: true,
-    trace: 'retain-on-failure',
-    video: 'retain-on-failure',
+    screenshot: 'only-on-failure',
+    trace: 'on', //'retain-on-failure',
+    video: 'on', //'retain-on-failure',
     launchOptions: {
       slowMo: 300,
     },
