@@ -18,7 +18,9 @@ End-to-end and API testing framework for the [Kolsquare Notes App](https://kolsq
 
 Test task structure overview — click the preview to watch on YouTube:
 
-[![Test task structure overview](https://img.youtube.com/vi/Z589E4oPfIY/maxresdefault.jpg)](https://youtu.be/Z589E4oPfIY)
+<a href="https://youtu.be/Z589E4oPfIY" target="_blank" rel="noopener noreferrer">
+  <img src="https://img.youtube.com/vi/Z589E4oPfIY/maxresdefault.jpg" alt="Test task structure overview" />
+</a>
 
 ## Installation
 
