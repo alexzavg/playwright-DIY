@@ -134,7 +134,6 @@ See the [documentation/](documentation/) folder for:
 - [Test Cases](documentation/test-cases.md)
 - [Bug Reports](documentation/bug-report/)
 - [Future QA Approach](documentation/future-qa-approach.md)
-- [Postman Collection](documentation/kolsquare-notes-api.postman_collection.json)
 
 ---
 
