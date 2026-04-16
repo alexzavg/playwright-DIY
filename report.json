@@ -1,0 +1,424 @@
+{
+  "config": {
+    "configFile": "/home/runner/work/playwright-DIY/playwright-DIY/playwright.config.ts",
+    "rootDir": "/home/runner/work/playwright-DIY/playwright-DIY/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "/home/runner/work/playwright-DIY/playwright-DIY/src/utils/global-setup.ts",
+    "globalTeardown": "/home/runner/work/playwright-DIY/playwright-DIY/src/utils/global-teardown.ts",
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/alexzavg/playwright-DIY/commit/99daf5cf525fff07b9e271a8ca1789ab7ce5eb4c",
+        "commitHash": "99daf5cf525fff07b9e271a8ca1789ab7ce5eb4c",
+        "buildHref": "https://github.com/alexzavg/playwright-DIY/actions/runs/24510815920"
+      },
+      "gitCommit": {
+        "shortHash": "99daf5c",
+        "hash": "99daf5cf525fff07b9e271a8ca1789ab7ce5eb4c",
+        "subject": "Update README.md",
+        "body": "Update README.md",
+        "author": {
+          "name": "Alexander Zavgorodnii",
+          "email": "17077454+alexzavg@users.noreply.github.com",
+          "time": 1776072433000
+        },
+        "committer": {
+          "name": "GitHub",
+          "email": "noreply@github.com",
+          "time": 1776072433000
+        },
+        "branch": "master"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "playwright-report/report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/playwright-DIY/playwright-DIY/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "productKey": "kolsquare",
+          "envKey": "prod",
+          "platform": "desktop"
+        },
+        "id": "kolsquare-prod-desktop",
+        "name": "kolsquare-prod-desktop",
+        "testDir": "/home/runner/work/playwright-DIY/playwright-DIY/tests/kolsquare",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 240000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.54.2",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "kolsquare/ui/tc-01-create-note.spec.ts",
+      "file": "kolsquare/ui/tc-01-create-note.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "TC-01: Create a note",
+          "file": "kolsquare/ui/tc-01-create-note.spec.ts",
+          "line": 10,
+          "column": 6,
+          "specs": [
+            {
+              "title": "User can create a note via the UI",
+              "ok": true,
+              "tags": [
+                "E2E"
+              ],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "kolsquare-prod-desktop",
+                  "projectName": "kolsquare-prod-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3162,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Create a new note and capture API response",
+                          "duration": 1005
+                        },
+                        {
+                          "title": "Verify the note appears in the list",
+                          "duration": 7
+                        },
+                        {
+                          "title": "Verify note has a random author assigned",
+                          "duration": 19
+                        },
+                        {
+                          "title": "Verify API response has correct structure",
+                          "duration": 6
+                        }
+                      ],
+                      "startTime": "2026-04-16T12:43:28.910Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/playwright-DIY/playwright-DIY/test-results/ui-tc-01-create-note-TC-01-ba198-an-create-a-note-via-the-UI-kolsquare-prod-desktop/video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/runner/work/playwright-DIY/playwright-DIY/test-results/ui-tc-01-create-note-TC-01-ba198-an-create-a-note-via-the-UI-kolsquare-prod-desktop/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d05f0ba95b621dd2c25e-5c0158018eebc808ea12",
+              "file": "kolsquare/ui/tc-01-create-note.spec.ts",
+              "line": 23,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "kolsquare/ui/tc-04-delete-note.spec.ts",
+      "file": "kolsquare/ui/tc-04-delete-note.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "TC-04: Delete a note",
+          "file": "kolsquare/ui/tc-04-delete-note.spec.ts",
+          "line": 6,
+          "column": 6,
+          "specs": [
+            {
+              "title": "User can delete a note via the UI",
+              "ok": true,
+              "tags": [
+                "E2E"
+              ],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "kolsquare-prod-desktop",
+                  "projectName": "kolsquare-prod-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2931,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Verify the note is visible",
+                          "duration": 7
+                        },
+                        {
+                          "title": "Delete the note via UI",
+                          "duration": 1024
+                        },
+                        {
+                          "title": "Verify the note is no longer in the list",
+                          "duration": 187
+                        }
+                      ],
+                      "startTime": "2026-04-16T12:43:32.252Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/playwright-DIY/playwright-DIY/test-results/ui-tc-04-delete-note-TC-04-c4b17-an-delete-a-note-via-the-UI-kolsquare-prod-desktop/video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/runner/work/playwright-DIY/playwright-DIY/test-results/ui-tc-04-delete-note-TC-04-c4b17-an-delete-a-note-via-the-UI-kolsquare-prod-desktop/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c1f74dddf81539fff54-5a09a6f3c9259f89d62e",
+              "file": "kolsquare/ui/tc-04-delete-note.spec.ts",
+              "line": 17,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "kolsquare/ui/tc-06-reply-to-note.spec.ts",
+      "file": "kolsquare/ui/tc-06-reply-to-note.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "TC-06: Reply to a note",
+          "file": "kolsquare/ui/tc-06-reply-to-note.spec.ts",
+          "line": 9,
+          "column": 6,
+          "specs": [
+            {
+              "title": "User can reply to a note via the UI",
+              "ok": true,
+              "tags": [
+                "E2E"
+              ],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "kolsquare-prod-desktop",
+                  "projectName": "kolsquare-prod-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2729,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Reply to the note",
+                          "duration": 978
+                        },
+                        {
+                          "title": "Verify the reply appears under the parent note",
+                          "duration": 5
+                        }
+                      ],
+                      "startTime": "2026-04-16T12:43:35.242Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/playwright-DIY/playwright-DIY/test-results/ui-tc-06-reply-to-note-TC--37dd0--reply-to-a-note-via-the-UI-kolsquare-prod-desktop/video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/runner/work/playwright-DIY/playwright-DIY/test-results/ui-tc-06-reply-to-note-TC--37dd0--reply-to-a-note-via-the-UI-kolsquare-prod-desktop/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "49bbb5bf716a0771ba00-06adbc4968ac6c59ff85",
+              "file": "kolsquare/ui/tc-06-reply-to-note.spec.ts",
+              "line": 27,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "kolsquare/ui/tc-08-expand-thread.spec.ts",
+      "file": "kolsquare/ui/tc-08-expand-thread.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "TC-08: Expand collapsed thread",
+          "file": "kolsquare/ui/tc-08-expand-thread.spec.ts",
+          "line": 13,
+          "column": 6,
+          "specs": [
+            {
+              "title": "User can expand reply thread",
+              "ok": true,
+              "tags": [
+                "E2E"
+              ],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "kolsquare-prod-desktop",
+                  "projectName": "kolsquare-prod-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2157,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Create a note with 3 replies via API",
+                          "duration": 546
+                        },
+                        {
+                          "title": "Open the Notes page",
+                          "duration": 845,
+                          "steps": [
+                            {
+                              "title": "Go to \"/\"",
+                              "duration": 815
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Verify thread is collapsed with \"Show more replies\" button",
+                          "duration": 10
+                        },
+                        {
+                          "title": "Click \"Show more replies\" to expand",
+                          "duration": 345
+                        },
+                        {
+                          "title": "Verify all replies are now visible",
+                          "duration": 17
+                        }
+                      ],
+                      "startTime": "2026-04-16T12:43:38.021Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/playwright-DIY/playwright-DIY/test-results/ui-tc-08-expand-thread-TC--b7c80-ser-can-expand-reply-thread-kolsquare-prod-desktop/video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/runner/work/playwright-DIY/playwright-DIY/test-results/ui-tc-08-expand-thread-TC--b7c80-ser-can-expand-reply-thread-kolsquare-prod-desktop/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "7c85433ffae8684deb5e-23a63ebd0d137be62693",
+              "file": "kolsquare/ui/tc-08-expand-thread.spec.ts",
+              "line": 20,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-04-16T12:43:20.159Z",
+    "duration": 20123.92,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
